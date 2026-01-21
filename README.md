@@ -9,12 +9,15 @@ En este caso, la aplicación desarrollada es de Recetas de Cocina, permitiendo:
 
 API utilizada: TheMealDB (https://www.themealdb.com/api.php)
 
-## Descripción de la Aplicación y Pantallas
-3.1 Pantalla de Inicio (Index)
+# Descripción de la Aplicación y Pantallas
+
+## Pantalla de Inicio (Index)
 Muestra una lista de recetas populares obtenidas desde la API.
 Cada receta se presenta con su imagen y nombre.
 Al tocar una receta, se navega a la pantalla de detalle.
 Implementa FlatList para renderizado eficiente de listas.
+
+<img src="https://github.com/user-attachments/assets/8919a43e-fa5e-44a5-b7e0-b7993f3bbdc2" width="300">
 
  
 ## Pantalla de Búsqueda (Search)
@@ -22,13 +25,16 @@ Permite buscar recetas por nombre mediante un TextInput.
 Los resultados se muestran en una lista dinámica.
 Cada resultado es clickeable para ver el detalle de la receta.
 
+<img src="https://github.com/user-attachments/assets/daf8f9b5-6503-47b8-9770-d771016b3cd6" width="300">
+
  
 ## Pantalla de Favoritos (Favorites)
 Lista recetas guardadas por el usuario.
 Permite eliminar recetas de favoritos.
 Mantiene el estado global mediante Context API (FavoritesContext).
 
- 
+<img src="https://github.com/user-attachments/assets/a1c148f3-9fed-458c-aa9f-68b604039d5c" width="300">
+
  
 ## Pantalla de Detalle de Receta
 Muestra información completa de la receta:
