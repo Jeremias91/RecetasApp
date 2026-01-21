@@ -1,4 +1,4 @@
-## Objetivo del Trabajo Práctico
+# Objetivo del proyecto
 El objetivo fue construir una aplicación móvil usando React Native con Expo, que consuma datos de una API pública gratuita. La app conta con tres pantallas y funcionalidades de búsqueda, visualización de detalle y favoritos.
 
 En este caso, la aplicación desarrollada es de Recetas de Cocina, permitiendo:
@@ -8,7 +8,8 @@ En este caso, la aplicación desarrollada es de Recetas de Cocina, permitiendo:
 - Guardar recetas en favoritos.
 
 API utilizada: TheMealDB (https://www.themealdb.com/api.php)
-3. Descripción de la Aplicación y Pantallas
+
+## Descripción de la Aplicación y Pantallas
 3.1 Pantalla de Inicio (Index)
 Muestra una lista de recetas populares obtenidas desde la API.
 Cada receta se presenta con su imagen y nombre.
@@ -16,20 +17,20 @@ Al tocar una receta, se navega a la pantalla de detalle.
 Implementa FlatList para renderizado eficiente de listas.
 
  
-# Pantalla de Búsqueda (Search)
+## Pantalla de Búsqueda (Search)
 Permite buscar recetas por nombre mediante un TextInput.
 Los resultados se muestran en una lista dinámica.
 Cada resultado es clickeable para ver el detalle de la receta.
 
  
-# Pantalla de Favoritos (Favorites)
+## Pantalla de Favoritos (Favorites)
 Lista recetas guardadas por el usuario.
 Permite eliminar recetas de favoritos.
 Mantiene el estado global mediante Context API (FavoritesContext).
 
  
  
-# Pantalla de Detalle de Receta
+## Pantalla de Detalle de Receta
 Muestra información completa de la receta:
 - Imagen
 - Nombre
@@ -39,14 +40,14 @@ Permite agregar o quitar la receta de favoritos.
 
  
  
-# Arquitectura de la Aplicación
+## Arquitectura de la Aplicación
 - Stack Navigator: maneja la navegación general, incluyendo la pantalla de detalle.
 - Tabs Navigator: organiza Home, Buscar y Favoritos.
 - Context API: mantiene el estado de recetas favoritas en toda la app.
 - Expo Router: gestiona rutas dinámicas y tabs.
 - Componentes reutilizables: FlatList, Card, Image, TouchableOpacity.
 
-#Estructura de carpetas del proyecto:
+## Estructura de carpetas del proyecto:
 /app
   /recipe
     [id].tsx
@@ -64,7 +65,7 @@ FavoritesContext.tsx
   - Detalle de receta: lookup.php?i=<idMeal>
 - Manejo de errores básico con .catch() y ActivityIndicator para mostrar carga.
   
-# Tecnologías y Librerías Usadas
+## Tecnologías y Librerías Usadas
 - React Native: desarrollo multiplataforma.
 - Expo: entorno de desarrollo y testing.
 - TypeScript: tipado seguro.
