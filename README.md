@@ -1,50 +1,78 @@
-# Welcome to your Expo app 👋
+## Objetivo del Trabajo Práctico
+El objetivo fue construir una aplicación móvil usando React Native con Expo, que consuma datos de una API pública gratuita. La app conta con tres pantallas y funcionalidades de búsqueda, visualización de detalle y favoritos.
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+En este caso, la aplicación desarrollada es de Recetas de Cocina, permitiendo:
+- Visualizar recetas populares.
+- Buscar recetas por nombre.
+- Ver detalles completos de cada receta (ingredientes e instrucciones).
+- Guardar recetas en favoritos.
 
-## Get started
+API utilizada: TheMealDB (https://www.themealdb.com/api.php)
+3. Descripción de la Aplicación y Pantallas
+3.1 Pantalla de Inicio (Index)
+Muestra una lista de recetas populares obtenidas desde la API.
+Cada receta se presenta con su imagen y nombre.
+Al tocar una receta, se navega a la pantalla de detalle.
+Implementa FlatList para renderizado eficiente de listas.
 
-1. Install dependencies
+ 
+# Pantalla de Búsqueda (Search)
+Permite buscar recetas por nombre mediante un TextInput.
+Los resultados se muestran en una lista dinámica.
+Cada resultado es clickeable para ver el detalle de la receta.
 
-   ```bash
-   npm install
-   ```
+ 
+# Pantalla de Favoritos (Favorites)
+Lista recetas guardadas por el usuario.
+Permite eliminar recetas de favoritos.
+Mantiene el estado global mediante Context API (FavoritesContext).
 
-2. Start the app
+ 
+ 
+# Pantalla de Detalle de Receta
+Muestra información completa de la receta:
+- Imagen
+- Nombre
+- Ingredientes
+- Instrucciones
+Permite agregar o quitar la receta de favoritos.
 
-   ```bash
-   npx expo start
-   ```
+ 
+ 
+# Arquitectura de la Aplicación
+- Stack Navigator: maneja la navegación general, incluyendo la pantalla de detalle.
+- Tabs Navigator: organiza Home, Buscar y Favoritos.
+- Context API: mantiene el estado de recetas favoritas en toda la app.
+- Expo Router: gestiona rutas dinámicas y tabs.
+- Componentes reutilizables: FlatList, Card, Image, TouchableOpacity.
 
-In the output, you'll find options to open the app in a
-
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
-
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
-
-```bash
-npm run reset-project
-```
-
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
-
-## Learn more
-
-To learn more about developing your project with Expo, look at the following resources:
-
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+#Estructura de carpetas del proyecto:
+/app
+  /recipe
+    [id].tsx
+  (tabs)
+    index.tsx
+    search.tsx
+    favorites.tsx
+  _layout.tsx
+FavoritesContext.tsx
+# Consumo de API
+- API: TheMealDB
+- Endpoints principales:
+  - Listado inicial: search.php?s=
+  - Búsqueda por nombre: search.php?s=<query>
+  - Detalle de receta: lookup.php?i=<idMeal>
+- Manejo de errores básico con .catch() y ActivityIndicator para mostrar carga.
+  
+# Tecnologías y Librerías Usadas
+- React Native: desarrollo multiplataforma.
+- Expo: entorno de desarrollo y testing.
+- TypeScript: tipado seguro.
+- React Navigation / Expo Router: navegación entre pantallas.
+- Context API: manejo de estado global para favoritos.
+- Ionicons: íconos en la barra de tabs.
+ 
+## Conclusión
+La aplicación permite explorar recetas, buscar por nombre y guardar recetas favoritas de manera sencilla e intuitiva.
+Se destaca la integración con API externa, manejo de estado global y navegación con tabs y stack.
+El uso de React Native con Expo facilita el desarrollo multiplataforma y la implementación de interfaces atractivas y funcionales.
